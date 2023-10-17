@@ -60,7 +60,7 @@ app.get('/weather', (req, res) => {
         } else {
             console.log('Data: ' + latitude, longitude, location)
 
-            forecast(location, (error, {temperature, desc, precip, icon}) => {
+            forecast(location, (error, {temperature, desc, precip, wind, icon}) => {
                 if (error) {
                     console.log('Error: ' + error)
                 } else {
@@ -71,6 +71,7 @@ app.get('/weather', (req, res) => {
                         location: req.query.location,
                         temperature: temperature,
                         precip: precip + '%',
+                        wind: wind,
                         icon: icon
                     })
                 }

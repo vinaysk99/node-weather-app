@@ -17,6 +17,7 @@ const weather = (location, callback) => {
                 temperature: resBody.temperature,
                 desc: resBody.weather_descriptions[0],
                 precip: resBody.precip,
+                wind: resBody.wind_speed + ' kmph ' + resBody.wind_dir,
                 icon: resBody.weather_icons[0]
             })
         }
